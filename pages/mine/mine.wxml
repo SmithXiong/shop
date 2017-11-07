@@ -1,0 +1,21 @@
+<!--pages/mine/mine.wxml-->
+<view class="container grey-bg">
+  <view class="userinfo">
+    <block wx:if="{{!hasUserInfo && canIUse}}">
+      <button class="userinfo-default" open-type="getUserInfo" bindgetuserinfo="getUserInfo" />
+      <button class="userinfo-click" open-type="getUserInfo" bindgetuserinfo="getUserInfo">点击登录</button>
+    </block>
+    <block wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+    </block>
+  </view>
+  <view class="set-list">
+    <block wx:for="{{setlist}}">
+      <view class='set-item' data-router='{{item.router}}' bindtap='goNext'>
+        <text class='set-text'>{{item.title}}</text>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </block>
+  </view>
+</view>

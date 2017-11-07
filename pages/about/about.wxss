@@ -1,0 +1,17 @@
+/* pages/about/about.wxss */
+
+.destext {
+  text-indent: 60rpx;
+  margin: 20rpx 30rpx 20rpx 30rpx;
+  font-size: 34rpx;
+}
+
+.bottomtext {
+  position: fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  margin: 20rpx 0 20rpx 0;
+  font-size: 34rpx;
+}

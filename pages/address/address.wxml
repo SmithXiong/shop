@@ -1,0 +1,17 @@
+<!--pages/address/address.wxml-->
+<view class='container grey-bg'>
+  <view class="section">
+      <view class="section-title">收货人</view>
+      <input bindinput="bindNameInput" value="{{name}}" class='form-input' placeholder="名字" placeholder-style="color:#aaa" />
+    </view>
+    <view class="section">
+      <view class="section-title">手机号码</view>
+      <input bindinput="bindPhoneInput" value="{{phone}}" class='form-input' type="number" placeholder="11位手机号" placeholder-style="color:#aaa" />
+    </view>
+    <view class="section">
+      <view class="section-title">详细地址</view>
+      <input bindinput="bindAddressInput" value="{{address}}" class='form-input' placeholder="详细地址信息" placeholder-style="color:#aaa" />
+      <image src='../../static/position.png' class='position' bindtap='choooseloc'/>
+    </view>
+    <button formType="submit" class='submit' bindtap='formSubmit' loading="{{submit}}">{{subtype==='submit'?'提交':'更新'}}</button>
+</view>

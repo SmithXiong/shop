@@ -1,0 +1,18 @@
+<!--pages/addrlist/addrlist.wxml-->
+<view class='container grey-bg'>
+  <block wx:for="{{addrlist}}">
+    <view class='addrlist'>
+      <div class='name'>{{item.name}}</div>
+      <div class='address'>{{item.address}}</div>
+      <div class='actions'>
+        <view class='action' bindtap='editaddr' data-id="{{item.id}}">
+          <image src='../../static/edit.png' class='icon'/>编辑
+        </view>
+        <view class='action' bindtap='deladdr' data-id="{{item.id}}">
+          <image src='../../static/delete.png' class='icon'/>删除
+        </view>
+      </div>
+    </view>
+  </block>
+  <button class='new' bindtap='goAddress'>新增地址</button>
+</view>

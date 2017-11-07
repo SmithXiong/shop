@@ -1,0 +1,66 @@
+<!--pages/category/category.wxml-->
+<view class='container'>
+  <view class="row-container">
+    <scroll-view scroll-y class='cate-list'>
+      <block wx:for="{{categories}}" wx:key="{{id}}">
+        <view class="{{item.id === currentId ? 'cate-item selected' : 'cate-item'}}" bindtap='changeCate' data-id="{{item.id}}">
+          <div class='cate-text'>{{item.title}}</div>
+        </view>
+      </block>
+    </scroll-view>
+    <view class='goods-list'>
+      <block wx:for="{{goodslist}}" wx:key="{{id}}">
+        <view class='goods-item' data-id="{{item.id}}">
+          <view class='goods-pic'>
+            <image src="{{item.src}}" class='goods-image' />
+          </view>
+          <view class='goods-info'>
+            <view class='goods-title'>
+              <div class='title-text'>{{item.title}}</div>
+            </view>
+            <view class='price'>
+              <div class='red-text'>¥{{item.price}}</div>
+              <view class='action'>
+                <image src="../../static/reduce.png" hidden="{{item.count===0}}" bindtap='reducegoods' class='action-image' data-id="{{item.id}}" />
+                <div class='count'>{{item.count}}</div>
+                <image src="../../static/add.png" bindtap='addgoods' class='action-image' data-id="{{item.id}}" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </block>
+    </view>
+  </view>
+  <view class="cart-bg" hidden="{{!cartShow}}">
+    <view class='cart-bgtop' style="height:{{topHeight+'px'}}" bindtap='showCart'></view>
+    <view class='cart-header'>
+      <text class='cart-text half'>购物车</text>
+      <text class='cart-text half right' bindtap='clearCart'>清空</text>
+    </view>
+    <scroll-view scroll-y class='cart-list'>
+      <block wx:for="{{cart}}" wx:key="{{id}}">
+        <view class="cart-item">
+          <div class='cart-text'>{{item.title}}</div>
+          <view class='action'>
+            <div class='cart-text red margin'>¥{{item.price*100*item.count/100}}</div>
+            <image src="../../static/reduce.png" hidden="{{item.count===0}}" bindtap='reducegoods' class='action-image' data-id="{{item.id}}" />
+            <div class='count'>{{item.count}}</div>
+            <image src="../../static/add.png" bindtap='addgoods' class='action-image' data-id="{{item.id}}" />
+          </view>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+  <view class='cart-container'>
+    <view class='cart-pic'>
+      <image src='../../static/cart.png' class='cart-image' bindtap='showCart' />
+    </view>
+    <view class='cart-info'>
+      总价：<text class='red margin-right'>¥{{total}}</text>
+      数量：<text class='red'>{{count}}</text>
+    </view>
+    <view class="cart-settle {{count===0 && 'grey'}}" bindtap='goOrder'>
+      <text class='btn-settle'>去结算</text>
+    </view>
+  </view>
+</view>

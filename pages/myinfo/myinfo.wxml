@@ -1,0 +1,54 @@
+<!--pages/myinfo/myinfo.wxml-->
+<view class="container grey-bg">
+  <view class="set-list">
+    <view class='set-item avatar'>
+      <text class='set-text'>头像</text>
+      <view class='set-right'>
+        <image src="{{userInfo.avatarUrl}}" class='avatar-img'></image>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </view>
+    <view class='set-item'>
+      <text class='set-text'>名字</text>
+      <view class='set-right'>
+        <text class='set-text'>{{userInfo.nickName}}</text>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </view>
+    <view class='set-item'>
+      <text class='set-text'>性别</text>
+      <view class='set-right'>
+        <text class='set-text'>{{userInfo.gender === 1 ? '男': userInfo.gender === 2 ? '女' : '未知' }}</text>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </view>
+    <view class='set-item'>
+      <text class='set-text'>地区</text>
+      <view class='set-right'>
+        <text class='set-text'>{{userInfo.country+' '+userInfo.province+' '+userInfo.city}}</text>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </view>
+    <view class='set-item'>
+      <text class='set-text'>品牌</text>
+      <view class='set-right'>
+        <text class='set-text'>{{systemInfo.brand}}</text>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </view>
+    <view class='set-item'>
+      <text class='set-text'>型号</text>
+      <view class='set-right'>
+        <text class='set-text'>{{systemInfo.model}}</text>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </view>
+    <view class='set-item'>
+      <text class='set-text'>微信版本</text>
+      <view class='set-right'>
+        <text class='set-text'>{{systemInfo.version}}</text>
+        <image src='../../static/next.png' class='right-img'></image>
+      </view>
+    </view>
+  </view>
+</view>

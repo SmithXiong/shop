@@ -1,0 +1,28 @@
+<!--index.wxml-->
+<view class="container">
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" class='swiper'>
+    <block wx:for="{{banners}}" wx:key="{{src}}">
+      <swiper-item>
+        <image src="{{item.src}}" alt="{{item.alt}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="header">
+    <image src="../../static/hotType.png" class="header-image" />
+  </view>
+  <view class='hot-view'>
+    <block wx:for="{{hotlist}}" wx:key="{{src}}">
+      <view class='hot-item' bindtap='gotoDetail' data-id="{{item.src}}">
+        <view class='hot-pic'>
+          <image src="{{item.src}}" class='hot-image' />
+        </view>
+        <view class='hot-title'>
+          <div class='title-text'>{{item.title}}</div>
+        </view>
+        <view class='hot-title price'>
+          <div class='title-text red-text'>{{item.price}}</div>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>

@@ -1,0 +1,5 @@
+<!--pages/about/about.wxml-->
+<view class='container'>
+  <text class='destext'>Shop是一个商城购物类小程序，实现购物车添加商品、下单、添加地址功能，由Smith Xiong开发，源码地址https://github.com/SmithXiong</text>
+  <text class='bottomtext'>© 2017 GitHub, Inc.Smith Xiong</text>
+</view>

@@ -1,0 +1,67 @@
+/* pages/addrlist/addrlist.wxss */
+.grey-bg {
+  background-color: #f6f6f6;
+  padding:20rpx 0 20rpx 0;
+}
+
+.addrlist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-size: 32rpx;
+  background-color: #fff;
+  margin: 20rpx 0 20rpx 0;
+}
+
+.name {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin: 10rpx 0 5rpx 30rpx;
+}
+
+.address {
+  height: 80rpx;
+  line-height: 40rpx;
+  color: #aaa;
+  padding-bottom: 10rpx;
+  margin: 5rpx 0 10rpx 30rpx;
+  border-bottom: 2rpx solid #aaa;
+}
+
+.actions {
+  height: 68rpx;
+  line-height: 68rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 0 5% 0 5%;
+}
+
+.action {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-left: 40rpx;
+}
+
+.icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 15rpx;
+}
+
+.new {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #d6332a;
+  font-size: 32rpx;
+  color: #f6f6f6;
+  position: fixed;
+  bottom: 20rpx;
+  left:5%;
+}
