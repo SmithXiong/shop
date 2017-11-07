@@ -1,2 +1,28 @@
 <!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<view class='container grey-bg'>
+  <block wx:if="{{isHasAddr}}">
+    <view class='addrview'>
+      <view class='addrlist'>
+        <div class='name'>{{address.name}}<text class='phone'>{{address.phone}}</text></div>
+        <div class='address'>{{address.address}}</div>
+      </view>
+      <image src='../../static/next.png' class='right-img' />
+    </view>
+  </block>
+  <block wx:else>
+    <view class='addrview' bindtap='goAddress'>
+      <view class='addrlist'>
+        <div class='noaddr'>还没有收货地址，去添加</div>
+      </view>
+      <image src='../../static/next.png' class='right-img' />
+    </view>
+  </block>
+  <view class='bottom-container'>
+    <view class='bottom-info'>
+      <text class='red margin-right'>实付款：¥{{total}}</text>
+    </view>
+    <view class="bottom-settle">
+      <text class='btn-settle'>提交订单</text>
+    </view>
+  </view>
+</view>
