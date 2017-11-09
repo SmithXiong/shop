@@ -191,10 +191,16 @@
   align-items: flex-end;
   justify-content: flex-end;
   background-color: transparent;
+  transform: translateY(100%);
+  transition: all 0.4s ease;
   z-index: 2;
   position: fixed;
   bottom:0;
   left:0;
+}
+
+.cart-show {
+  transform: translateY(0);
 }
 
 .cart-bgtop {
@@ -202,9 +208,8 @@
   background-color: #aaa;
   opacity: 0.3;
   z-index: 3;
-  position: fixed;
-  top:0;
-  left:0;
+  height: 1200rpx;
+  display: inline-block;
 }
 
 .cart-header {

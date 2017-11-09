@@ -37,9 +37,9 @@
       </view>
     </view>
     <view class='set-item'>
-      <text class='set-text'>型号</text>
+      <text class='set-text'>系统</text>
       <view class='set-right'>
-        <text class='set-text'>{{systemInfo.model}}</text>
+        <text class='set-text'>{{systemInfo.system}}</text>
         <image src='../../static/next.png' class='right-img'></image>
       </view>
     </view>

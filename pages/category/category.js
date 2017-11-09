@@ -16,9 +16,7 @@ Page({
     currentId: categories[0].id,
     cart: [],
     total: 0,
-    count: 0,
-    viewHeight: 0,
-    topHeight:0
+    count: 0
   },
 
   //切换分类
@@ -53,13 +51,6 @@ Page({
     let count = cart.map(o => o.count).reduce((p, v) => { return p + v }, 0);
     this.setData({ allList: data, goodslist: data[this.data.currentId], total: total, count: count, cart: cart});
     wx.setStorageSync('cart', cart);
-    let _this = this;
-    setTimeout(function () {
-      wx.createSelectorQuery().select('.cart-bg').boundingClientRect(function (rect) {
-        let bottomHeight = rect.height;  // 节点的高度
-        _this.setData({ topHeight: _this.data.viewHeight - bottomHeight })
-      }).exec()
-    }, 50)
   },
 
   //reduce商品
@@ -89,13 +80,6 @@ Page({
     }
     this.setData(obj);
     wx.setStorageSync('cart', cart);
-    let _this = this;
-    setTimeout(function () {
-      wx.createSelectorQuery().select('.cart-bg').boundingClientRect(function (rect) {
-        let bottomHeight = rect.height;  // 节点的高度
-        _this.setData({ topHeight: _this.data.viewHeight - bottomHeight })
-      }).exec()
-    }, 50)
   },
 
   //显示购物列表
@@ -104,12 +88,6 @@ Page({
     if (this.data.count !== 0) {
       this.setData({ cartShow: !this.data.cartShow })
     }
-    setTimeout(function () {
-      wx.createSelectorQuery().select('.cart-bg').boundingClientRect(function (rect) {
-        let bottomHeight = rect.height;  // 节点的高度
-        _this.setData({ topHeight: _this.data.viewHeight - bottomHeight })
-      }).exec()
-    }, 50)
   },
 
   //清空购物车
@@ -146,7 +124,7 @@ Page({
         let index = allGoods[item.cateId].findIndex((o) => { return o.id === item.id });
         allGoods[item.cateId][index].count = item.count;
       }
-      this.setData({ viewHeight: res.windowHeight, allList: allGoods, goodslist: allGoods[categories[0].id], cart: cart, total: total, count: count })
+      this.setData({ allList: allGoods, goodslist: allGoods[categories[0].id], cart: cart, total: total, count: count })
     } catch (e) {
       console.log(e)
     }

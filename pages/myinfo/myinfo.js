@@ -27,6 +27,7 @@ Page({
     } catch (e) {
       console.log(e)
     }
+    console.log(res)
     res = Object.assign({
       userInfo: app.globalData.userInfo
     }, {systemInfo:res})
