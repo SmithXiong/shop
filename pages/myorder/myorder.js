@@ -1,5 +1,6 @@
 // pages/myorder/myorder.js
 import { formatTime } from '../../utils/util.js';
+const app = getApp();
 Page({
 
   /**
@@ -8,6 +9,10 @@ Page({
   data: {
     orderlist:[],
     isHasOrder: false
+  },
+
+  goDetail: function (e) {
+    app.navTo('orderdetail',{id:e.currentTarget.dataset.id})
   },
 
   /**

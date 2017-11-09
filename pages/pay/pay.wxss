@@ -1,0 +1,7 @@
+/* pages/pay/pay.wxss */
+
+.pay-img {
+  width:600rpx;
+  height:600rpx;
+  margin:200rpx 0 200rpx 0;
+}

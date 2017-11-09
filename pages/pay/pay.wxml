@@ -1,0 +1,4 @@
+<!--pages/pay/pay.wxml-->
+<view class='container'>
+  <image src='../../static/pay.jpg' class='pay-img'/>
+</view>

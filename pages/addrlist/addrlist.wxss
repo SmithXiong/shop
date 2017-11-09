@@ -54,6 +54,7 @@
 
 .new {
   width: 90%;
+  height: 80rpx;
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -64,4 +65,8 @@
   position: fixed;
   bottom: 20rpx;
   left:5%;
+}
+
+.empty {
+  height: 120rpx;
 }

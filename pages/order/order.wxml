@@ -48,10 +48,11 @@
       </view>
       <image src='../../static/next.png' class='right-img' />
     </view>
-  <text class='header'>备注信息</text>
+  <text class='header'>留言</text>
   <view class='addrview'>
-      <input class='descinput' placeholder='其它要求' placeholder-style='color:#aaa' value="{{description}}" bindinput='bindKeyInput'></input>
-    </view>
+    <input class='descinput' placeholder='买家留言（100字以内）' placeholder-style='color:#aaa' value="{{description}}" bindinput='bindKeyInput'></input>
+  </view>
+  <view class='empty'></view>
   <view class='bottom-container'>
     <view class='bottom-info'>
       <text class='red margin-right'>实付款：¥{{total}}</text>

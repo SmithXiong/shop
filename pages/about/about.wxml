@@ -1,5 +1,8 @@
 <!--pages/about/about.wxml-->
 <view class='container'>
-  <text class='destext'>Shop是一个商城购物类小程序，实现购物车添加商品、下单、添加地址、查看订单功能。</text>
+  <text class='destext'>Shop是一个商城购物类小程序，实现购物车添加商品、下单、添加地址、查看订单功能。<br/>
+  GitHub:https://github.com/SmithXiong/shop
+  </text>
+  <image src='../../static/about.png' class='pay-img'/>
   <text class='bottomtext'>© 2017 GitHub, Inc. Smith Xiong</text>
 </view>

@@ -1,38 +1,30 @@
-// pages/setting/setting.js
+// pages/orderdetail/orderdetail.js
+const app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentSize: 0
+    order: {}
   },
 
-  clearCache: function () {
-    let _this = this;
-    wx.showModal({
-      title: '提示',
-      content: '清除缓存会清空购物车、订单、地址，确认清除吗？',
-      success: function (res) {
-        if (res.confirm) {
-          wx.clearStorage();
-          _this.setData({ currentSize: 0 })
-        } else if (res.cancel) {
-          return;
-        }
-      }
-    })
+  createPay: function () {
+    app.navTo('pay');
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    try {
-      let res = wx.getStorageInfoSync()
-      this.setData({ currentSize: res.currentSize})
-    } catch (e) {
-      // Do something when catch error
+    if(options.id){
+      try {
+        let orderlist = wx.getStorageSync('orderlist') || [];
+        let index = orderlist.findIndex((o)=>{ return o.id === options.id });
+        this.setData(orderlist[index])
+      } catch (e) {
+        console.log(e)
+      }
     }
   },
 

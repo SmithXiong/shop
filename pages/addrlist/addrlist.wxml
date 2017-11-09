@@ -14,5 +14,6 @@
       </div>
     </view>
   </block>
+  <view class='empty'></view>
   <button class='new' bindtap='goAddress'>新增地址</button>
 </view>

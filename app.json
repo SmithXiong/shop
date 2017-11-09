@@ -8,6 +8,8 @@
     "pages/address/address",
     "pages/chooseaddr/chooseaddr",
     "pages/myorder/myorder",
+    "pages/orderdetail/orderdetail",
+    "pages/pay/pay",
     "pages/myinfo/myinfo",
     "pages/setting/setting",
     "pages/about/about"

@@ -3,7 +3,7 @@
   <view class='container grey-bg'>
     <view class='order-list'>
       <block wx:for="{{orderlist}}">
-        <view class='order-item' wx:if="{{item.cart.length === 1}}">
+        <view class='order-item' wx:if="{{item.cart.length === 1}}" bindtap='goDetail' data-id="{{item.id}}">
           <text class='order-time'>下单时间：{{item.createTime}}</text>
           <view class='order-row'>
             <view class='order-pic'>
@@ -20,7 +20,7 @@
           </view>
           <text class='order-bottom'>共计：{{item.count}}件商品<text class='red-text'>实付款：¥{{item.total}}</text></text>
         </view>
-        <view class='order-item' wx:else>
+        <view class='order-item' wx:else  bindtap='goDetail' data-id="{{item.id}}">
           <text class='order-time'>下单时间：{{item.createTime}}</text>
           <scroll-view scroll-x class='pic-row'>
             <block wx:for="{{item.cart}}">

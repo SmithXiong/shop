@@ -1,0 +1,53 @@
+<!--pages/orderdetail/orderdetail.wxml-->
+<view class='container grey-bg'>
+  <text class='header'>下单时间：{{createTime}}</text>
+  <text class='header'>商品清单</text>
+  <view class='goods-list'>
+    <block wx:for="{{cart}}" wx:key="{{id}}">
+      <view class='goods-item' data-id="{{item.id}}">
+        <view class='goods-pic'>
+          <image src="{{item.src}}" class='goods-image' />
+        </view>
+        <view class='goods-info'>
+          <view class='goods-title'>
+            <div class='title-text'>{{item.title}}</div>
+          </view>
+          <view class='price'>
+            <div class='red-text'>¥{{item.price}}</div>
+            <div class='count'>×{{item.count}}</div>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <text class='header'>收货信息</text>
+  <view class='addrview'>
+    <view class='addrlist'>
+      <div class='name'>{{address.name}}
+        <text class='phone'>{{address.phone}}</text>
+      </div>
+      <div class='address'>{{address.address}}</div>
+    </view>
+    <image src='../../static/next.png' class='right-img' />
+  </view>
+  <view class='addrview'>
+    <view class='payType'>
+      <text class='payName'>支付方式</text>
+      <text class='payName'>{{payType}}</text>
+    </view>
+    <image src='../../static/next.png' class='right-img' />
+  </view>
+  <text class='header'>留言</text>
+  <view class='addrview'>
+    <text class='descinput'>{{description || '无'}}</text>
+  </view>
+  <view class='empty'></view>
+  <view class='bottom-container'>
+    <view class='bottom-info'>
+      <text class='red margin-right'>实付款：¥{{total}}</text>
+    </view>
+    <view class="bottom-settle" bindtap='createPay'>
+      <text class='btn-settle'>去支付</text>
+    </view>
+  </view>
+</view>

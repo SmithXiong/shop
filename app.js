@@ -73,6 +73,8 @@ App({
       chooseaddr: "../chooseaddr/chooseaddr",
       order: "../order/order",
       myorder: "../myorder/myorder",
+      orderdetail: "../orderdetail/orderdetail",
+      pay: "../pay/pay",
       myinfo: "../myinfo/myinfo",
       setting: "../setting/setting",
       about: "../about/about"

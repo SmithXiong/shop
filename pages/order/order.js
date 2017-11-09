@@ -1,5 +1,5 @@
 // pages/order/order.js
-import { ajax, plus, multi, guid } from '../../utils/util.js';
+import { ajax, plus, multi, guid, formatTime } from '../../utils/util.js';
 const app = getApp();
 Page({
 
@@ -39,7 +39,7 @@ Page({
     order.id = guid();
     order.cart = this.data.cart;
     order.address = this.data.address;
-    order.createTime = new Date();
+    order.createTime = formatTime(new Date());
     order.total = this.data.total;
     order.count = count;
     order.payType = this.data.payType[this.data.payIndex];
