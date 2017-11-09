@@ -1,0 +1,54 @@
+/* pages/chooseaddr/chooseaddr.wxss */
+.grey-bg {
+  background-color: #f6f6f6;
+  padding:20rpx 0 20rpx 0;
+}
+
+.addrview {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  font-size: 32rpx;
+  background-color: #fff;
+  margin: 0 0 20rpx 0;
+}
+
+.addrlist {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.name {
+  height: 40rpx;
+  line-height: 40rpx;
+  margin: 10rpx 0 5rpx 30rpx;
+}
+
+.noaddr {
+  height: 80rpx;
+  line-height: 80rpx;
+  color: #aaa;
+  margin: 10rpx 0 10rpx 30rpx;
+}
+
+.phone {
+  margin-left: 40rpx;
+}
+
+.address {
+  height: 80rpx;
+  line-height: 40rpx;
+  color: #aaa;
+  padding-bottom: 10rpx;
+  margin: 5rpx 0 10rpx 30rpx;
+}
+
+.right-img {
+  height: 40rpx;
+  width: 40rpx;
+  margin-right: 30rpx;
+}

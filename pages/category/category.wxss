@@ -177,7 +177,7 @@
 }
 
 .grey {
-  background-color: #ffc0cb;
+  background-color: #aaa;
 }
 
 .btn-settle {
@@ -199,8 +199,8 @@
 
 .cart-bgtop {
   width: 100%;
-  background-color: #4d0000;
-  opacity: 0.1;
+  background-color: #aaa;
+  opacity: 0.3;
   z-index: 3;
   position: fixed;
   top:0;

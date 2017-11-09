@@ -1,9 +1,31 @@
 <!--pages/order/order.wxml-->
 <view class='container grey-bg'>
+  <text class='header'>商品清单</text>
+  <view class='goods-list'>
+    <block wx:for="{{cart}}" wx:key="{{id}}">
+      <view class='goods-item' data-id="{{item.id}}">
+        <view class='goods-pic'>
+          <image src="{{item.src}}" class='goods-image' />
+        </view>
+        <view class='goods-info'>
+          <view class='goods-title'>
+            <div class='title-text'>{{item.title}}</div>
+          </view>
+          <view class='price'>
+            <div class='red-text'>¥{{item.price}}</div>
+            <div class='count'>×{{item.count}}</div>
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+  <text class='header'>收货信息</text>
   <block wx:if="{{isHasAddr}}">
-    <view class='addrview'>
+    <view class='addrview' bindtap='goChooseAddr'>
       <view class='addrlist'>
-        <div class='name'>{{address.name}}<text class='phone'>{{address.phone}}</text></div>
+        <div class='name'>{{address.name}}
+          <text class='phone'>{{address.phone}}</text>
+        </div>
         <div class='address'>{{address.address}}</div>
       </view>
       <image src='../../static/next.png' class='right-img' />
@@ -17,11 +39,24 @@
       <image src='../../static/next.png' class='right-img' />
     </view>
   </block>
+  <view class='addrview'>
+      <view class='payType'>
+        <text class='payName'>支付方式</text>
+        <picker mode="selector" value="{{payIndex}}" range="{{payType}}" bindchange="bindPickerChange">
+          <text class='payName'>{{payType[payIndex]}}</text>
+        </picker>
+      </view>
+      <image src='../../static/next.png' class='right-img' />
+    </view>
+  <text class='header'>备注信息</text>
+  <view class='addrview'>
+      <input class='descinput' placeholder='其它要求' placeholder-style='color:#aaa' value="{{description}}" bindinput='bindKeyInput'></input>
+    </view>
   <view class='bottom-container'>
     <view class='bottom-info'>
       <text class='red margin-right'>实付款：¥{{total}}</text>
     </view>
-    <view class="bottom-settle">
+    <view class="bottom-settle" bindtap='createOrder'>
       <text class='btn-settle'>提交订单</text>
     </view>
   </view>

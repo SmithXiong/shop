@@ -70,9 +70,11 @@ App({
       mine: "../mine/mine",
       addrlist: "../addrlist/addrlist",
       address: "../address/address",
+      chooseaddr: "../chooseaddr/chooseaddr",
       order: "../order/order",
       myorder: "../myorder/myorder",
       myinfo: "../myinfo/myinfo",
+      setting: "../setting/setting",
       about: "../about/about"
     };
 

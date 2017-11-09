@@ -6,8 +6,10 @@
     "pages/order/order",
     "pages/addrlist/addrlist",
     "pages/address/address",
+    "pages/chooseaddr/chooseaddr",
     "pages/myorder/myorder",
     "pages/myinfo/myinfo",
+    "pages/setting/setting",
     "pages/about/about"
   ],
   "window": {

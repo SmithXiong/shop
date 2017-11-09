@@ -1,26 +1,36 @@
-// pages/myorder/myorder.js
-import { formatTime } from '../../utils/util.js';
+// pages/chooseaddr/chooseaddr.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orderlist:[],
-    isHasOrder: false
+    addrlist: [],
+  },
+
+  chooseAddr: function (e) {
+    let list = this.data.addrlist;
+    let index = e.currentTarget.dataset.index;
+    list.forEach((item,i) => {
+      item.selected = i===index ? true : false;
+    })
+    this.setData({addrlist:list})
+    wx.setStorageSync('addressSel', list[index]);
+    wx.navigateBack();
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    try {
-      let orderlist = wx.getStorageSync('orderlist') || [];
-      let isHasOrder = orderlist.length === 0 ? false : true;
-      this.setData({ orderlist: orderlist, isHasOrder: isHasOrder })
-    } catch (e) {
-      console.log(e)
-    }
+    let addrlist = wx.getStorageSync('addrlist') || [];
+    let id = options.id;
+    addrlist = addrlist.map((item)=>{
+      return item.id === id ? Object.assign(item, { selected: true }) : Object.assign(item, { selected: false })
+    })
+    this.setData({
+      addrlist: addrlist
+    })
   },
 
   /**

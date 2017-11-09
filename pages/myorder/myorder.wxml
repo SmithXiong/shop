@@ -1,2 +1,42 @@
 <!--pages/myorder/myorder.wxml-->
-<text>pages/myorder/myorder.wxml</text>
+<block wx:if="{{isHasOrder}}">
+  <view class='container grey-bg'>
+    <view class='order-list'>
+      <block wx:for="{{orderlist}}">
+        <view class='order-item' wx:if="{{item.cart.length === 1}}">
+          <text class='order-time'>下单时间：{{item.createTime}}</text>
+          <view class='order-row'>
+            <view class='order-pic'>
+              <image src="{{item.cart[0].src}}" class='order-image' />
+            </view>
+            <view class='order-info'>
+              <view class='order-title'>
+                <div class='title-text'>{{item.cart[0].title}}</div>
+              </view>
+              <view class='order-title order-desc'>
+                <div class='title-text'>备注：{{item.description}}</div>
+              </view>
+            </view>
+          </view>
+          <text class='order-bottom'>共计：{{item.count}}件商品<text class='red-text'>实付款：¥{{item.total}}</text></text>
+        </view>
+        <view class='order-item' wx:else>
+          <text class='order-time'>下单时间：{{item.createTime}}</text>
+          <scroll-view scroll-x class='pic-row'>
+            <block wx:for="{{item.cart}}">
+              <view class='pic-item'>
+                <image src="{{item.src}}" class='order-image' />
+              </view>
+            </block>
+          </scroll-view>
+          <text class='order-bottom'>共计：{{item.count}}件商品<text class='red-text'>实付款：¥{{item.total}}</text></text>
+        </view>
+      </block>
+    </view>
+  </view>
+</block>
+<block wx:else>
+  <view class='container'>
+    <text class='noOrder'>还没有订单，快去下单吧！</text>
+  </view>
+</block>

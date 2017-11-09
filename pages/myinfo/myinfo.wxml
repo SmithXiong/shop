@@ -3,7 +3,7 @@
   <view class="set-list">
     <view class='set-item avatar'>
       <text class='set-text'>头像</text>
-      <view class='set-right'>
+      <view class='set-right' bindtap='preview'>
         <image src="{{userInfo.avatarUrl}}" class='avatar-img'></image>
         <image src='../../static/next.png' class='right-img'></image>
       </view>

@@ -10,6 +10,13 @@ Page({
     systemInfo: {}
   },
 
+  preview: function () {
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接
+      urls: [this.data.userInfo.avatarUrl] // 需要预览的图片http链接列表
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

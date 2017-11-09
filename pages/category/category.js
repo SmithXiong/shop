@@ -120,7 +120,16 @@ Page({
 
   //下订单
   goOrder: function () {
-    app.navTo('order');
+    if(this.data.count === 0) {
+      wx.showToast({
+        title: '请选择商品',
+        duration: 1000,
+        image: '../../static/nologin.png',
+        mask: true
+      })
+    }else{
+      app.navTo('order');
+    }
   },
 
   /**
@@ -132,7 +141,12 @@ Page({
       let cart = wx.getStorageSync('cart') || [];
       let total = this.calcuPrice(cart);
       let count = cart.map(o => o.count).reduce((p, v) => { return p + v }, 0);
-      this.setData({ viewHeight: res.windowHeight, cart: cart, total: total, count: count })
+      let allGoods = goods;
+      for (let item of cart) {
+        let index = allGoods[item.cateId].findIndex((o) => { return o.id === item.id });
+        allGoods[item.cateId][index].count = item.count;
+      }
+      this.setData({ viewHeight: res.windowHeight, allList: allGoods, goodslist: allGoods[categories[0].id], cart: cart, total: total, count: count })
     } catch (e) {
       console.log(e)
     }
@@ -159,7 +173,22 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    try {
+      let cart = wx.getStorageSync('cart') || [];
+      if(cart.length !== this.data.cart.length){
+        let total = this.calcuPrice(cart);
+        let count = cart.map(o => o.count).reduce((p, v) => { return p + v }, 0);
+        let allGoods = this.data.allList;
+        for (let item of Object.keys(allGoods)) {
+          allGoods[item].forEach((o) => {
+            o.count = 0;
+          })
+        }
+        this.setData({ allList: allGoods, goodslist: allGoods[this.data.currentId], cart: cart, total: total, count: count })
+      }
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   /**

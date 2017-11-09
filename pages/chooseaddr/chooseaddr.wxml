@@ -1,0 +1,14 @@
+<!--pages/chooseaddr/chooseaddr.wxml-->
+<view class='container grey-bg'>
+  <block wx:for="{{addrlist}}">
+    <view class='addrview' data-index="{{index}}" bindtap='chooseAddr'>
+      <view class='addrlist'>
+        <div class='name'>{{item.name}}
+          <text class='phone'>{{item.phone}}</text>
+        </div>
+        <div class='address'>{{item.address}}</div>
+      </view>
+      <image src='../../static/ic_xuanzhong.png' class='right-img' hidden="{{!item.selected}}"/>
+    </view>
+  </block>
+</view>

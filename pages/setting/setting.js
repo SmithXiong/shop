@@ -1,13 +1,26 @@
-// pages/myorder/myorder.js
-import { formatTime } from '../../utils/util.js';
+// pages/setting/setting.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    orderlist:[],
-    isHasOrder: false
+    currentSize: 0
+  },
+
+  clearCache: function () {
+    wx.showModal({
+      title: '提示',
+      content: '清除缓存会清空购物车、订单、地址，确认清除吗？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.clearStorage();
+          this.setData({ currentSize: 0 })
+        } else if (res.cancel) {
+          return;
+        }
+      }
+    })
   },
 
   /**
@@ -15,11 +28,10 @@ Page({
    */
   onLoad: function (options) {
     try {
-      let orderlist = wx.getStorageSync('orderlist') || [];
-      let isHasOrder = orderlist.length === 0 ? false : true;
-      this.setData({ orderlist: orderlist, isHasOrder: isHasOrder })
+      let res = wx.getStorageInfoSync()
+      this.setData({ currentSize: res.currentSize})
     } catch (e) {
-      console.log(e)
+      // Do something when catch error
     }
   },
 

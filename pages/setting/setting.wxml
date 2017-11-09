@@ -1,0 +1,9 @@
+<!--pages/setting/setting.wxml-->
+<view class="container grey-bg">
+  <view class="set-list">
+    <view class='set-item' bindtap='clearCache'>
+      <text class='set-text'>清除缓存({{currentSize}}kb)</text>
+      <image src='../../static/next.png' class='right-img'></image>
+    </view>
+  </view>
+</view>
