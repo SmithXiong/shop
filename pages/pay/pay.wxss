@@ -5,3 +5,16 @@
   height:600rpx;
   margin:200rpx 0 200rpx 0;
 }
+
+.bottomtext {
+  position: fixed;
+  bottom:0;
+  left:0;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 20rpx 0 20rpx 0;
+  font-size: 34rpx;
+}

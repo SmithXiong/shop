@@ -1,4 +1,8 @@
 <!--pages/pay/pay.wxml-->
 <view class='container'>
-  <image src='../../static/pay.jpg' class='pay-img'/>
+  <image src='../../static/pay.jpg' class='pay-img' bindtap='preview'/>
+  <view class='bottomtext'>
+    <text>点击图片长按识别二维码，为我打call</text>
+    <text>保存到相册，天天为我打call</text>
+  </view>
 </view>

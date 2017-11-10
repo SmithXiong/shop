@@ -1784,9 +1784,28 @@ const goods = {
   ]
 };
 
+const comments = [
+  {
+    "head": 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLJPCdbGdjsMGbLrtiahqPy3KpziajHSHyRl1A2O8ic9fB7DBeQcOAREichE7lEFvInTPn7ElGlicrORCg/0',
+    "score": 3,
+    "content": '这件东西还不错，欢迎大家购买，这件东西还不错，欢迎大家购买'
+  },
+  {
+    "head": 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLJPCdbGdjsMGbLrtiahqPy3KpziajHSHyRl1A2O8ic9fB7DBeQcOAREichE7lEFvInTPn7ElGlicrORCg/0',
+    "score": 2,
+    "content": '这件东西还不错，欢迎大家购买，这件东西还不错，欢迎大家购买'
+  },
+  {
+    "head": 'https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTLJPCdbGdjsMGbLrtiahqPy3KpziajHSHyRl1A2O8ic9fB7DBeQcOAREichE7lEFvInTPn7ElGlicrORCg/0',
+    "score": 5,
+    "content": '这件东西还不错，欢迎大家购买，这件东西还不错，欢迎大家购买'
+  }
+];
+
 module.exports = {
   banners: banners,
   hotlist: hotlist,
   categories: categories,
+  comments: comments,
   goods: goods
 }

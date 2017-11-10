@@ -8,6 +8,13 @@ Page({
   
   },
 
+  preview: function () {
+    wx.previewImage({
+      current: '', // 当前显示图片的http链接
+      urls: ['http://chanww.oss-cn-shanghai.aliyuncs.com/chanww/2017-11-10pay.jpg'] // 需要预览的图片http链接列表
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

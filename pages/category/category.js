@@ -110,6 +110,11 @@ Page({
     }
   },
 
+  goDetail: function (e) {
+    let options = {id:e.currentTarget.dataset.id,cateId:e.currentTarget.dataset.cateid};
+    app.navTo('goodsdetail',options);
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

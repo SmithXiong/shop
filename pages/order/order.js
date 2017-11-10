@@ -47,8 +47,12 @@ Page({
     try {
       let orderlist = wx.getStorageSync('orderlist') || [];
       orderlist.unshift(order);
-      wx.setStorageSync('orderlist', orderlist);
-      wx.setStorageSync('cart', []);
+      wx.setStorageSync('orderlist', orderlist);    
+      if (this.data.isDetail){
+        wx.setStorageSync('goods', []);
+      }else{
+        wx.setStorageSync('cart', []);
+      }
       wx.showToast({
         title: '订单提交成功',
         duration: 1000,
@@ -79,10 +83,15 @@ Page({
   onLoad: function (options) {
     try {
       let cart = wx.getStorageSync('cart') || [];
+      let isDetail = false;
+      if (options.isDetail) {
+        cart = wx.getStorageSync('goods') || [];
+        isDetail = true;
+      }
       let addrlist = wx.getStorageSync('addrlist') || [];
       let isHasAddr = addrlist.length === 0 ? false : true;
       let total = this.calcuPrice(cart);
-      this.setData({ cart: cart, total: total, address: addrlist[0], isHasAddr: isHasAddr })
+      this.setData({ cart: cart, total: total, address: addrlist[0], isHasAddr: isHasAddr, isDetail: isDetail })
     } catch (e) {
       console.log(e)
     }

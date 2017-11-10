@@ -1,0 +1,50 @@
+<!--pages/goodsdetail/goodsdetail.wxml-->
+<view class='container grey-bg'>
+  <view class='pic-view'>
+    <image src="{{goods.src}}" class='goods-image'></image>
+  </view>
+  <view class='goods-info'>
+    <view class='goods-title'>
+      <div class='title-text'>{{goods.title}}</div>
+    </view>
+    <view class='price'>
+      <div class='red-text'>¥{{goods.price}}</div>
+      <view class='action'>
+        <image src="../../static/reduce.png" hidden="{{goods.count===0}}" bindtap='reducegoods' class='action-image' />
+        <div class='count'>{{goods.count}}</div>
+        <image src="../../static/add.png" bindtap='addgoods' class='action-image' />
+      </view>
+    </view>
+  </view>
+  <text class='header'>商品评价({{comments.length}})</text>
+  <view class='comment-list'>
+    <view class='comment-item' wx:for="{{comments}}">
+      <view class='head-view'>
+        <image src="{{item.head}}" class='head-image'></image>
+      </view>
+      <view class='right-view'>
+        <view class='score'>
+          <image class='icon-score' src="{{item.score>=1 ? '../../static/score.png' : '../../static/unscore.png'}}" />
+          <image class='icon-score' src="{{item.score>=2 ? '../../static/score.png' : '../../static/unscore.png'}}" />
+          <image class='icon-score' src="{{item.score>=3 ? '../../static/score.png' : '../../static/unscore.png'}}" />
+          <image class='icon-score' src="{{item.score>=4 ? '../../static/score.png' : '../../static/unscore.png'}}" />
+          <image class='icon-score' src="{{item.score>=5 ? '../../static/score.png' : '../../static/unscore.png'}}" />
+        </view>
+        <text class='content'>{{item.content}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='empty'></view>
+  <view class='bottom-container'>
+    <view class="bottom-col" bindtap='bindCollect'>
+      <image class='icon' src="{{collect ? '../../static/collect.png' : '../../static/uncollect.png'}}"></image>
+      <text class='collect-text'>{{collect ? '取消收藏' : '收藏'}}</text>
+    </view>
+    <view class='bottom-info'>
+      <text class='red margin-right'>总价：¥{{total}}</text>
+    </view>
+    <view class="bottom-settle {{goods.count===0 && 'grey'}}" bindtap='createOrder'>
+      <text class='btn-settle'>立即购买</text>
+    </view>
+  </view>
+</view>
