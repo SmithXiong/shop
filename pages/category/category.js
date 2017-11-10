@@ -92,8 +92,20 @@ Page({
 
   //清空购物车
   clearCart: function () {
-    wx.setStorageSync('cart', []);
-    this.setData({ allList: goods, goodslist: goods[this.data.currentId], total: 0, count: 0, cart: [], cartShow: !this.data.cartShow })
+    let _this = this;
+    wx.showModal({
+      title: '提示',
+      content: '确定清空购物车吗？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.setStorageSync('cart', []);
+          _this.setData({ allList: goods, goodslist: goods[_this.data.currentId], total: 0, count: 0, cart: [], cartShow: !_this.data.cartShow })
+        } else if (res.cancel) {
+          return;
+        }
+      }
+    })
+    
   },
 
   //下订单

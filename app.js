@@ -77,6 +77,7 @@ App({
       pay: "../pay/pay",
       goodsdetail: "../goodsdetail/goodsdetail",
       myinfo: "../myinfo/myinfo",
+      mycollect: "../mycollect/mycollect",
       setting: "../setting/setting",
       about: "../about/about"
     };
@@ -85,7 +86,7 @@ App({
 
     // 需要登录才能访问的路由
     let _this = this;
-    let isLoginRoute = ['addrlist', 'goodsdetail', 'address', 'order', 'myorder', 'myinfo'];
+    let isLoginRoute = ['addrlist', 'goodsdetail', 'address', 'order', 'myorder', 'myinfo', 'mycollect'];
     if (!this.isLogin && isLoginRoute.find((item) => item == routerName)) {
       wx.showToast({
         title: '请先登录',

@@ -1,0 +1,28 @@
+<!--pages/mycollect/mycollect.wxml-->
+<block wx:if="{{collectlist.length!==0}}">
+<view class='container grey-bg'>
+  <view class='goods-list'>
+    <block wx:for="{{collectlist}}" wx:key="{{id}}">
+      <view class='goods-item' data-id="{{item.id}}" data-cateid="{{item.cateId}}" bindtap='goDetail'>
+        <view class='goods-pic'>
+          <image src="{{item.src}}" class='goods-image' />
+        </view>
+        <view class='goods-info'>
+          <view class='goods-title'>
+            <div class='title-text'>{{item.title}}</div>
+          </view>
+          <view class='price'>
+            <div class='red-text'>¥{{item.price}}</div>
+            <!--<div class='count'>×{{item.count}}</div>-->
+          </view>
+        </view>
+      </view>
+    </block>
+  </view>
+</view>
+</block>
+<block wx:else>
+  <view class='container'>
+    <text class='noOrder'>还没有收藏，快去收藏吧！</text>
+  </view>
+</block>

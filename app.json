@@ -12,6 +12,7 @@
     "pages/pay/pay",
     "pages/goodsdetail/goodsdetail",
     "pages/myinfo/myinfo",
+    "pages/mycollect/mycollect",
     "pages/setting/setting",
     "pages/about/about"
   ],

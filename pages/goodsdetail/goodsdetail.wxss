@@ -8,7 +8,7 @@
   width: 100%;
   height: 580rpx;
   text-align: center;
-  background-color: #fff;
+  background-color: #f6f6f6;
 }
 
 .goods-image {

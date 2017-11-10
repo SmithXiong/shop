@@ -4,7 +4,7 @@ const app = getApp()
 
 Page({
   data: {
-    setlist: [{ title: '我的订单', router: 'myorder' }, { title: '我的地址', router: 'addrlist' }, { title: '我的资料', router: 'myinfo' }, { title: '设置', router: 'setting' }, { title: '关于', router: 'about' }],
+    setlist: [{ title: '我的订单', router: 'myorder' }, { title: '我的收藏', router: 'mycollect'}, { title: '我的地址', router: 'addrlist' }, { title: '我的资料', router: 'myinfo' }, { title: '设置', router: 'setting' }, { title: '关于', router: 'about' }],
     userInfo: {},
     hasUserInfo: false,
     canIUse: wx.canIUse('button.open-type.getUserInfo')

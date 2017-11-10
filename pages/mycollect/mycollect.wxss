@@ -1,0 +1,91 @@
+/* pages/mycollect/mycollect.wxss */
+.grey-bg {
+  background-color: #f6f6f6;
+  padding: 20rpx 0 0 0;
+}
+
+.goods-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: #f6f6f6;
+}
+
+.goods-item {
+  flex:1;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 200rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+
+.goods-info {
+  flex: 0.7;
+  display: flex;
+  flex-direction: column;
+}
+
+.goods-pic {
+  flex: 0.3;
+  width: 100%;
+  height: 100%;
+}
+
+.goods-image {
+  width: 90%;
+  height: 90%;
+  margin: 5%
+}
+
+.goods-title {
+  width: 100%;
+  height: 120rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.title-text {
+  width: 90%;
+  height: 100%;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  overflow: hidden;
+}
+
+.price {
+  width: 90%;
+  height: 80rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 5%
+}
+
+.count {
+  line-height: 40rpx;
+  font-size: 32rpx;
+  color: #d6332a;
+  width: 28rpx;
+  text-align: center;
+  margin: 0 10rpx;
+}
+
+.red-text {
+  line-height: 40rpx;
+  font-size: 32rpx;
+  color: #d6332a;
+}
+
+.noOrder {
+  width: 100%;
+  height: 100%;
+  line-height: 40rpx;
+  font-size: 32rpx;
+  text-align: center;
+  padding: 50% 0 50% 0;
+}

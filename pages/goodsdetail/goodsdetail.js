@@ -16,6 +16,18 @@ Page({
 
   bindCollect: function () {
     this.setData({collect:!this.data.collect})
+    try {
+      let collectlist = wx.getStorageSync('collectlist') || [];
+      if (this.data.collect){
+        collectlist.push(this.data.goods);
+      }else{
+        let index = collectlist.findIndex((o)=>{return o.id===this.data.goods.id});
+        collectlist.splice(index,1)
+      }
+      wx.setStorageSync('collectlist', collectlist);
+    } catch (e) {
+      console.log(e)
+    }
   },
 
   addgoods: function () {
@@ -50,7 +62,17 @@ Page({
       let goodsdetail = goods[options.cateId][index];
       goodsdetail.src = goodsdetail.src.replace('190x190','290x290');
       let total = multi(goodsdetail.price,goodsdetail.count);
-      this.setData({ goods: goodsdetail, total: total});
+      let collect = false;
+      try {
+        let collectlist = wx.getStorageSync('collectlist') || [];
+        let index = collectlist.findIndex((o) => { return o.id === goodsdetail.id });
+        if (index!==-1){
+          collect = true;
+        }  
+      } catch (e) {
+        console.log(e)
+      }
+      this.setData({ goods: goodsdetail, total: total, collect: collect});
     }
   },
 
